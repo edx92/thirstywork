@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'thirsty-work';
+  loading = true;
+  initLoader = () => {
+    setTimeout(()=>{
+      this.loading = false;
+    },100)
+  }
+
+  
+
+  ngOnInit(){
+
+    this.initLoader() ;
+
+  }
 }

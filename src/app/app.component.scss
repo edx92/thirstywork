@@ -1,0 +1,11 @@
+:host {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+.app_wrapper {
+    display:flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}

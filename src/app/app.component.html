@@ -1,2 +1,7 @@
-<div>{{title}}</div>
-<app-droploader></app-droploader>
+<!-- <div>{{title}}</div> -->
+<app-droploader [hidden]="!loading"></app-droploader>
+<div class="app_wrapper">
+    <app-sidebar></app-sidebar>
+    
+    <div>The Main Content Area</div>
+</div>

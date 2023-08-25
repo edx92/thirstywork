@@ -1,20 +1,38 @@
+@use "../../styles.scss";
+@use "sass:map";
+@use '@angular/material' as mat;
+
+
 .sidebar_container {
-    background-color: #3498DB;
+    background-color: mat.get-color-from-palette(styles.$thirsty-work-tertiary,700);
     height: 100%;
     padding: 20px;
     width: fit-content;
 
     color: #ffffff;
-    font-family: sans-serif;
+    
     display: flex;
     flex-direction:column;
     justify-content: space-between;
 
+    h2 {
+        margin-top: 0;
+    }
+
     .navLinks_list {
+        flex-grow:1;
         list-style: none;
         padding-left: 0px;
         > * + * {
             margin-top: 10px;
+        }
+    }
+
+    .Sidebar_user {
+        text-align: left;
+
+        > button {
+            text-align: center;
         }
     }
 }

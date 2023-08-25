@@ -12,7 +12,7 @@ export class AppComponent {
   initLoader = () => {
     setTimeout(()=>{
       this.loading = false;
-    },100)
+    },4000)
   }
 
   

@@ -1,6 +1,9 @@
 # ThirstyWork
 
+This is a web app to help you track the plants in your home and their watering schedule.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+
 
 ## Development server
 

@@ -2,14 +2,17 @@
 @use "sass:map";
 @use '@angular/material' as mat;
 
-
+:host {
+    min-width: 200px;
+}
 .sidebar_container {
     background-color: mat.get-color-from-palette(styles.$thirsty-work-tertiary,700);
     height: 100%;
     padding: 20px;
-    width: fit-content;
 
     color: #ffffff;
+
+    border-right: mat.get-color-from-palette(styles.$thirsty-work-accent,A400) solid 2px;
     
     display: flex;
     flex-direction:column;

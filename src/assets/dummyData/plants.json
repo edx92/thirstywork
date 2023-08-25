@@ -1,0 +1,30 @@
+[
+    {
+        "name":"Grant The Plant",        
+        "species":"Monsterra",      
+        "growSeasonWateringSchedule":12,
+        "dormantSeasonWateringSchedule":18,      
+        "dormantSeasonStart":"10-25 00:00:01",
+        "dormantSeasonEnd":"03-01 00:00:00",      
+        "variety":"Monstera Deliciosa",
+        "genus":"Araceae",
+        "family":"Araceae",
+        "lightConditions": "Most Light Conditions Tolerated. No Bright Direct Light",
+        "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Monstera_deliciosa3.jpg/800px-Monstera_deliciosa3.jpg"
+    },
+    {
+        "name":"George W",        
+        "species":"Peace Lily",      
+        "growSeasonWateringSchedule":10,
+        "dormantSeasonWateringSchedule":18,      
+        "dormantSeasonStart":"10-25 00:00:01",
+        "dormantSeasonEnd":"03-01 00:00:00",      
+        "variety":"Spathiphyllum wallisii",
+        "genus":"Spathiphyllum",
+        "family":"Araceae",
+        "lightConditions": "Most Light Conditions Tolerated. No Bright Direct Light",
+        "image":"https://upload.wikimedia.org/wikipedia/commons/b/bd/Spathiphyllum_cochlearispathum_RTBG.jpg"
+    }
+]
+
+

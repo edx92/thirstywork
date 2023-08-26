@@ -1,15 +1,19 @@
 <div class="sidebar_container">
-    <h2>ThirstyWork</h2>
+    <div class="sidebar-container_title-wrapper">
+        <h2 class="sidebar-container_title">ThirstyWork</h2>
+        <span class="sidebar-title_icon"><fa-icon size="lg" [icon]="icons.faDroplet"></fa-icon></span>
+    </div>
+    
     <ul class="navLinks_list">
         <li class="navLinks-list_item">
             <a class="navLinks-list-item_link" mat-raised-button color="secondary">
-                <span class="mat-button-wrapper"><fa-icon [icon]="icons.faSeedling"></fa-icon> Add New Plant</span>
+                <span class="mat-button-wrapper"><span class="icon-button_icon"><fa-icon [icon]="icons.faSeedling"></fa-icon></span> <span class="icon-button_text"> Add New Plant</span></span>
             </a>
         </li>
         <li class="navLinks-list_item">
             
             <a class="navLinks-list-item_link" mat-raised-button color="secondary">                
-                <span class="mat-button-wrapper"><fa-icon [icon]="icons.faPuzzlePiece"></fa-icon> Add A Room </span>
+                <span class="mat-button-wrapper"><span class="icon-button_icon"><fa-icon [icon]="icons.faPuzzlePiece"></fa-icon></span> <span class="icon-button_text"> Add A Room </span></span>
             </a>
         </li>
     </ul>

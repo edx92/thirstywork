@@ -1,5 +1,7 @@
 // Drip loader credit should be attributed to Adib Behjat https://codepen.io/abehjat/pen/oXMENv
-
+@use "../../styles.scss";
+@use "sass:map";
+@use '@angular/material' as mat;
 
 .loader_background {
     z-index: 100;
@@ -10,7 +12,8 @@
     right: 0;
     overflow: hidden;
     &.loader_background--blue{
-        background-color: #3498DB;
+        //background-color: #3498DB;
+        background-color: mat.get-color-from-palette(styles.$thirsty-work-tertiary,400);
  
     }
 

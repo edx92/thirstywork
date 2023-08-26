@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PlantService, Plant} from '../plant.service';
 import { Observable } from 'rxjs';
+import { faDroplet, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -9,6 +10,11 @@ import { Observable } from 'rxjs';
   styleUrls: ['./plantcards.component.scss'],
 })
 export class PlantcardsComponent implements OnInit {
+
+  icons = {
+    faDroplet: faDroplet,
+    faTrashCan: faTrashCan
+  }
   
   public plants$?: Observable<Plant[]>;
 

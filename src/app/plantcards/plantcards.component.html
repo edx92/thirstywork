@@ -1,5 +1,5 @@
 
-<div class="plantCards_container flex flex--wrapped-row" >
+<div class="plantCards_container flex flex--row-wrapped" >
 
         <mat-card  *ngFor="let plant of plants$ | async"class="example-card">
             <mat-card-header>
@@ -20,8 +20,8 @@
                 
             </mat-card-content>
             <mat-card-actions>
-                <button mat-button>LIKE</button>
-                <button mat-button>SHARE</button>
+                <button mat-raised-button color="tertiary"><span class="mat-button-wrapper"><fa-icon [icon]="icons.faDroplet"></fa-icon> WATER ME </span></button>
+                <button mat-raised-button color="warn"><span class="mat-button-wrapper"><fa-icon [icon]="icons.faTrashCan"></fa-icon></span></button>
             </mat-card-actions>
         </mat-card>
     

@@ -3,24 +3,55 @@
 @use '@angular/material' as mat;
 
 :host {
-    min-width: 200px;
+    
+    @media(min-width: 700px){
+        min-width: 200px;        
+    }
 }
 .sidebar_container {
-    background-color: mat.get-color-from-palette(styles.$thirsty-work-tertiary,700);
+    //background-color: mat.get-color-from-palette(styles.$thirsty-work-tertiary,700);
+    box-shadow: rgba(mat.get-color-from-palette(styles.$thirsty-work-tertiary,900), 0.2) 0px 10px 13px 3px;
     height: 100%;
     padding: 20px;
 
-    color: #ffffff;
+    // color: #ffffff;
+    color:#5b5b5b;
 
-    border-right: mat.get-color-from-palette(styles.$thirsty-work-accent,A400) solid 2px;
+    border-right: mat.get-color-from-palette(styles.$thirsty-work-tertiary,400) solid 2px;
+    border-radius: 0px 30px 30px 0px;
     
     display: flex;
     flex-direction:column;
     justify-content: space-between;
 
-    h2 {
-        margin-top: 0;
+    .sidebar-container_title-wrapper {
+
+        text-align: center;
+        
+        @media(min-width: 700px){
+            text-align: left;;
+            
+        }
+
+
+        h2 {
+            margin-top: 0;
+    
+            display:none;
+            
+            margin-right: 5px;
+            
+            @media(min-width: 700px){
+                display: inline-block;
+                
+            }
+        }
+        .sidebar-title_icon {
+            display: inline-block;
+        }
     }
+
+    
 
     .navLinks_list {
         flex-grow:1;
@@ -29,13 +60,30 @@
         > * + * {
             margin-top: 10px;
         }
+
+        span.icon-button_text {
+            font-size: 0px;
+            @media(min-width: 700px) {
+                font-size: 16px;
+            }
+        }
+
+        
+    }
+
+    a.navLinks-list-item_link.mdc-button.mat-secondary {
+        color: #ffffff;
     }
 
     .Sidebar_user {
         text-align: left;
 
-        > button {
+        > a.mdc-fab {            
             text-align: center;
+
+            &.mat-secondary {
+                color: #ffffff;
+            }
         }
     }
 }

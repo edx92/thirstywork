@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
   initLoader = () => {
     setTimeout(()=>{
       this.loading = false;
-    },1000)
+    },4000)
   }
 
   

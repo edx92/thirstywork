@@ -6,9 +6,11 @@
                 <div mat-card-avatar class="plantcard_avatar-image" style='background-image:url("{{plant.image}}")'></div>
                 <mat-card-title>{{plant.name}}</mat-card-title>
                 <mat-card-subtitle>{{plant.species}}</mat-card-subtitle>
+                <app-levelindicator></app-levelindicator>
             </mat-card-header>
             <img mat-card-image src="{{plant.image}}" alt="Photo of a Shiba Inu">
-            <mat-card-content>
+            
+            <mat-card-content>               
                 
                 <p>
                     <strong>Genus:</strong><br>{{plant.genus}}                

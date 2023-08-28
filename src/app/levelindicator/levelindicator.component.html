@@ -1,7 +1,11 @@
-<div class="container__progressbars">
+<div class="container__progressbars" [ngStyle]="{'color':levelColor}">
     <svg viewBox="0 0 104 104" xmlns="http://www.w3.org/2000/svg">
       <circle class="bg" cx="52" cy="52" r="40" />
-      <circle class="meter-1" cx="52" cy="52" r="40" />
+      <circle [@fillIndicator]="filled ? {
+        value:'filled', params: {
+          percentage: percentage
+        }
+      } : 'initial'" class="meter-1" cx="52" cy="52" r="40" />
     </svg>
     <fa-icon [icon]="icons.faDroplet" size="lg"></fa-icon>
     <!-- <svg>

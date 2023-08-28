@@ -1,5 +1,6 @@
 @use "../../styles.scss";
 @use "sass:map";
+@use "sass:math";
 @use '@angular/material' as mat;
 
 
@@ -50,7 +51,9 @@
 
 @function strokeDashoffset($num) {
     //@return ((100 - $num)/100) * (3.14159265359 * (40 * 2))
-    @return ($num * (2 * 40 * 3.14159265359)) / 100
+    //@return ($num * (2 * 40 * 3.14159265359)) / 100
+    @return math.div($num * (2 * 40 * 3.1415926536), 100);
+    //or calc(($num * (2 * 40 * 3.1415926536)) / 100)
   }
 
 
@@ -73,21 +76,15 @@
 .meter-1 {
     stroke-dasharray: 0 999;
     stroke: mat.get-color-from-palette(styles.$thirsty-work-tertiary,400);
-    animation: progress-1 4s ease-out forwards;
+    //animation: progress-1 4s ease-out forwards;
     //transition: stroke-dasharray 4s ease-out;
+    //stroke-dasharray: 0 999;
 }
-// .meter-2 {
-//   stroke: lime;
-//   stroke-dasharray: 360;
-//   stroke-dashoffset: 160;
-//   animation: progress-2 .75s ease-out;
+
+// .filled {
+//     stroke-dasharray: strokeDashoffset(50) 999;
 // }
-// .meter-3 {
-//   stroke: magenta;
-//   stroke-dasharray: 360;
-//   stroke-dashoffset: 250;
-//   animation: progress-3 .5s ease-out;
-// }
+
 
 @keyframes progress-1 {
     from {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import { map } from 'rxjs/operators';
+//import { map } from 'rxjs/operators';
 
 export interface Plant {
   name:string;
@@ -22,7 +22,8 @@ export interface Plant {
   
   image:string;
 
-  needsWatering:boolean;
+  lastWatered: string,
+
 
 }
 
@@ -47,11 +48,11 @@ export class PlantService {
     return this.plants$;
   }
 
-  public getPlantsThatNeedWater(): Observable<Plant[]> {
-    return this.plants$.pipe(
-      map((plants) => plants.filter((plant) => plant.needsWatering))
-    )
-  }
+  // public getPlantsThatNeedWater(): Observable<Plant[]> {
+  //   return this.plants$.pipe(
+  //     map((plants) => plants.filter((plant) => plant.needsWatering))
+  //   )
+  // }
 }
 
 //new Date().toISOString().slice(0, 19).replace('T', ' ');

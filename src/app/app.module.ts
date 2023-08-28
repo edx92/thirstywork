@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { LevelIndicatorComponent } from './levelindicator/levelindicator.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
+
 
 
 
@@ -34,7 +36,9 @@ import { LevelIndicatorComponent } from './levelindicator/levelindicator.compone
     MatCardModule,
     MatGridListModule
   ],
-  providers: [],
+  providers: [
+    provideAnimations()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

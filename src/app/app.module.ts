@@ -14,6 +14,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { LevelIndicatorComponent } from './levelindicator/levelindicator.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 
 
@@ -34,7 +37,9 @@ import { provideAnimations } from '@angular/platform-browser/animations';
     MatButtonModule,
     HttpClientModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatMenuModule, 
+    MatIconModule
   ],
   providers: [
     provideAnimations()

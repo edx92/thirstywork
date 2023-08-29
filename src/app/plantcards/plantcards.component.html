@@ -8,22 +8,50 @@
                 <mat-card-subtitle>{{plant.species}}</mat-card-subtitle>
                 <app-levelindicator [waterLevel]="calculateWaterLevel(plant.lastWatered,plant.growSeasonWateringSchedule)"></app-levelindicator>
             </mat-card-header>
-            <img mat-card-image src="{{plant.image}}" alt="Photo of a Shiba Inu">
+            <img mat-card-image src="{{plant.image}}" alt="Photo of {{plant.species}}">
             
             <mat-card-content>               
                 
                 <p>
-                    <strong>Genus:</strong><br>{{plant.genus}}                
+                    <u>Genus</u>: {{plant.genus}}<br><br>
+                    <u>Kept In</u>: {{plant.room}}<br>
+                    <u>Water Every</u>: {{plant.growSeasonWateringSchedule}} days<br>
+                    <u>Last Watered</u>: {{getLastWateredDays(plant.lastWatered)}} days ago<br>              
                 </p>
                 
-                <p>
+                
+                <!-- <p>
                     <strong>Light Conditions:</strong><br>{{plant.lightConditions}}
-                </p>
+                </p> -->
                 
             </mat-card-content>
             <mat-card-actions>
                 <button mat-raised-button color="tertiary"><span class="mat-button-wrapper"><fa-icon [icon]="icons.faDroplet"></fa-icon> WATER ME </span></button>
-                <button mat-raised-button color="warn"><span class="mat-button-wrapper"><fa-icon [icon]="icons.faTrashCan"></fa-icon></span></button>
+                <!-- <button mat-raised-button color="warn"><span class="mat-button-wrapper"><fa-icon [icon]="icons.faTrashCan"></fa-icon></span></button> -->
+                <div class="menu-container">
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                        <mat-icon>more_vert</mat-icon>
+                      </button>
+                      <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                          <mat-icon>edit_location_alt</mat-icon>
+                          <span>Move To Different Room</span>
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon>edit</mat-icon>
+                            <span>Edit Plant</span>
+                          </button>
+                          <button mat-menu-item [style.color]="'red'">
+                            <mat-icon>delete_forever</mat-icon>
+                            <span>Delete Plant</span>
+                          </button>
+                        <!-- <button mat-menu-item disabled>
+                          <mat-icon>delete_forever</mat-icon>
+                          <span>Delete Plant</span>
+                        </button> -->
+                        
+                      </mat-menu>
+                </div>
             </mat-card-actions>
         </mat-card>
     

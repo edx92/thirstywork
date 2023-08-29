@@ -79,6 +79,20 @@
             }
             object-fit: cover;
         }
+
+        .mat-mdc-card-content {
+           p{
+                line-height: 1.4;
+           } 
+        }
+
+        .mat-mdc-card-actions {
+            justify-content: space-between;
+
+            // .menu-container {
+            //     flex-grow: 1;
+            // }
+        }
     }
 
 }

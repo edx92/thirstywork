@@ -16,6 +16,10 @@
  flex-grow: 1;
 }
 
+.mat-card-title.mat-mdc-card-title {
+    font-weight: bold;
+}
+
 .container__progressbars {
     display: flex;
     height: 50px;
@@ -35,6 +39,20 @@
     //     }
     // }
     color: mat.get-color-from-palette(styles.$thirsty-work-tertiary,400);
+    &.color-tertiary {
+        color: mat.get-color-from-palette(styles.$thirsty-work-tertiary,400) !important;
+        
+      }
+      
+      &.color-accent {
+        color:mat.get-color-from-palette(styles.$thirsty-work-accent,700) !important;
+        
+      }
+      
+      &.color-warn {
+        color: mat.get-color-from-palette(styles.$thirsty-work-warn,400) !important;
+        
+      }
     .ng-fa-icon{
         position:absolute;
         top: 50%;
@@ -79,6 +97,32 @@
     //animation: progress-1 4s ease-out forwards;
     //transition: stroke-dasharray 4s ease-out;
     //stroke-dasharray: 0 999;
+    &.color-tertiary {
+        color: mat.get-color-from-palette(styles.$thirsty-work-tertiary,400) !important;
+        stroke: mat.get-color-from-palette(styles.$thirsty-work-tertiary,400) !important;
+        // * {
+        //   color: mat.get-color-from-palette(styles.$thirsty-work-tertiary,400) !important;
+        //   stroke: mat.get-color-from-palette(styles.$thirsty-work-tertiary,400) !important;
+        // }
+      }
+      
+      &.color-accent {
+        color:mat.get-color-from-palette(styles.$thirsty-work-accent,700) !important;
+        stroke: mat.get-color-from-palette(styles.$thirsty-work-accent,700) !important; 
+        // *{
+        //   color:mat.get-color-from-palette(styles.$thirsty-work-accent,400) !important;
+        //   stroke: mat.get-color-from-palette(styles.$thirsty-work-accent,400) !important;
+        // }
+      }
+      
+      &.color-warn {
+        color: mat.get-color-from-palette(styles.$thirsty-work-warn,400) !important;
+        stroke: mat.get-color-from-palette(styles.$thirsty-work-warn,400) !important;
+        // *{
+        //   color: mat.get-color-from-palette(styles.$thirsty-work-warn,400) !important;
+        //   stroke: mat.get-color-from-palette(styles.$thirsty-work-warn,400) !important;
+        // }
+      }
 }
 
 // .filled {

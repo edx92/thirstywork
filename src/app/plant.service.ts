@@ -23,6 +23,7 @@ export interface Plant {
   image:string;
 
   lastWatered: string,
+  room:string;
 
 
 }

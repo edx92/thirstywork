@@ -1,13 +1,13 @@
-<div class="container__progressbars" [ngStyle]="{'color':levelColor}">
+<div class="container__progressbars" [ngClass]="{'color-tertiary':levelColor.good,'color-accent':levelColor.medium,'color-warn':levelColor.warning}">
     <svg viewBox="0 0 104 104" xmlns="http://www.w3.org/2000/svg">
       <circle class="bg" cx="52" cy="52" r="40" />
-      <circle [@fillIndicator]="filled ? {
+      <circle [ngClass]="{'color-tertiary':levelColor.good,'color-accent':levelColor.medium,'color-warn':levelColor.warning}" [@fillIndicator]="filled ? {
         value:'filled', params: {
           percentage: percentage
         }
       } : 'initial'" class="meter-1" cx="52" cy="52" r="40" />
     </svg>
-    <fa-icon [icon]="icons.faDroplet" size="lg"></fa-icon>
+    <fa-icon [icon]="icons.faDroplet"  size="lg"></fa-icon>
     <!-- <svg>
       <circle class="bg" cx="57" cy="57" r="52" />
       <circle class="meter-2" cx="57" cy="57" r="52" />

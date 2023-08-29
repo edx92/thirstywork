@@ -11,13 +11,14 @@
         "genus":"Araceae",
         "family":"Araceae",
         "lightConditions": "Most Light Conditions Tolerated. No Bright Direct Light",
-        "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Monstera_deliciosa3.jpg/800px-Monstera_deliciosa3.jpg"
+        "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Monstera_deliciosa3.jpg/800px-Monstera_deliciosa3.jpg",
+        "room":"Living Room"
     },
     {
         "name":"George W",        
         "species":"Peace Lily",      
         "growSeasonWateringSchedule":10,
-        "lastWatered": "2023-08-20 10:03:37",
+        "lastWatered": "2023-08-07 10:03:37",
         "dormantSeasonWateringSchedule":18,      
         "dormantSeasonStart":"10-25 00:00:01",
         "dormantSeasonEnd":"03-01 00:00:00",      
@@ -25,7 +26,23 @@
         "genus":"Spathiphyllum",
         "family":"Araceae",
         "lightConditions": "Most Light Conditions Tolerated. No Bright Direct Light",
-        "image":"https://upload.wikimedia.org/wikipedia/commons/b/bd/Spathiphyllum_cochlearispathum_RTBG.jpg"
+        "image":"https://upload.wikimedia.org/wikipedia/commons/b/bd/Spathiphyllum_cochlearispathum_RTBG.jpg",
+        "room":"Living Room"
+    },
+    {
+        "name":"Keanu Leaves",        
+        "species":"Fiddle-Leaf Fig",      
+        "growSeasonWateringSchedule":7,
+        "lastWatered": "2023-08-23 10:03:37",
+        "dormantSeasonWateringSchedule":18,      
+        "dormantSeasonStart":"10-25 00:00:01",
+        "dormantSeasonEnd":"03-01 00:00:00",      
+        "variety":"Ficus lyrata",
+        "genus":"Spathiphyllum",
+        "family":"Araceae",
+        "lightConditions": "Bright Conditions. No Bright Direct Light",
+        "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Fiddle_leaf_fig_-_miami_jungle.jpg/800px-Fiddle_leaf_fig_-_miami_jungle.jpg",
+        "room":"Kitchen"
     }
 ]
 

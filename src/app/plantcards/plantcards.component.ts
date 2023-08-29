@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {PlantService, Plant} from '../plant.service';
-import { Observable } from 'rxjs';
+import { Observable} from 'rxjs';
 import { faDroplet, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
+
+// TODO: introduce isGrowingSeason Check
 
 @Component({
   selector: 'app-plantcards',
@@ -20,6 +22,16 @@ export class PlantcardsComponent implements OnInit {
 
   // inject the service in the constructor
   constructor(private plantService: PlantService){}
+
+  getLastWateredDays = (lastWatered:string) => {
+    // One day Time in ms (milliseconds)
+    const one_day = 1000 * 60 * 60 * 24;
+    let today = new Date();
+
+    let diff = Math.round((Math.round(today.getTime() - new Date(lastWatered).getTime()) / one_day));
+
+    return diff;
+  }
   
 
   calculateWaterLevel = (lastWatered:string,wateringSchedule:number) => {

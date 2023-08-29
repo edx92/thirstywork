@@ -45,7 +45,12 @@ export class LevelIndicatorComponent implements OnInit, OnChanges {
   filled = false;
   percentage = this.getFillIndicatorLineValue(this.waterLevel) + " 999";
 
-  levelColor = "#42a5f5";
+  levelColor = {
+    good: true,
+    medium:false,
+    warning: false
+  };
+  
   
 
   
@@ -61,8 +66,16 @@ export class LevelIndicatorComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges){
     this.waterLevel = changes["waterLevel"].currentValue;
-    if(this.waterLevel < 25){
-      this.levelColor = this.waterLevel < 25 ? "Orange" : "#42a5f5";
+    if(this.waterLevel < 25){      
+      this.levelColor.good = false;
+      this.levelColor.medium = true;
+      this.levelColor.warning = false;
+      //this.levelColor = this.waterLevel < 25 ? "Orange" : "#42a5f5";
+    }
+    if(this.waterLevel < 10){
+      this.levelColor.good = false;
+      this.levelColor.medium = false;
+      this.levelColor.warning = true;
     }
     this.percentage = this.getFillIndicatorLineValue(changes["waterLevel"].currentValue) + " 999";
   }

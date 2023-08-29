@@ -1,6 +1,7 @@
 import { Component, OnChanges, SimpleChanges, OnInit, Input } from '@angular/core';
 import { faDroplet} from '@fortawesome/free-solid-svg-icons';
 import {  trigger, state, style, animate, transition} from '@angular/animations';
+import { PreviousrouteService } from '../previousroute.service';
 
 @Component({
   selector: 'app-levelindicator',
@@ -32,13 +33,17 @@ export class LevelIndicatorComponent implements OnInit, OnChanges {
 
   @Input() waterLevel:number = 10;
 
+  constructor(private previousrouteService: PreviousrouteService){
+    
+  }
+
   title = "";
   icons = {
     faDroplet:faDroplet
   };
 
   getFillIndicatorLineValue = (percentage:number) => {
-    console.log(percentage)
+ 
     return  (percentage * (2 * 40 * 3.1415926536)) / 100;
   };
 
@@ -50,19 +55,33 @@ export class LevelIndicatorComponent implements OnInit, OnChanges {
     medium:false,
     warning: false
   };
-  
-  
+
+  prevUrl?:string = undefined;
 
   
 
   ngOnInit(){
-
-    setTimeout(()=>{
-      this.filled = true;
-    },4000)  
+    
+    this.previousrouteService.init();
+   
+    this.prevUrl = this.previousrouteService.getPreviousUrl().value;
+    
+    
+    if(this.prevUrl){
+      setTimeout(()=>{
+        this.filled = true;
+      },500)
+    } else {
+      setTimeout(()=>{
+        this.filled = true;
+      },4000) 
+    }
+    
     
 
   }
+
+
 
   ngOnChanges(changes: SimpleChanges){
     this.waterLevel = changes["waterLevel"].currentValue;

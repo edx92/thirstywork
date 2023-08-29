@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,8 +15,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { LevelIndicatorComponent } from './levelindicator/levelindicator.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { PlantdetailComponent } from './plantdetail/plantdetail.component';
+import { PreviousrouteService } from './previousroute.service';
 
 
 
@@ -27,7 +30,8 @@ import {MatMenuModule} from '@angular/material/menu';
     DroploaderComponent,
     SidebarComponent,
     PlantcardsComponent,
-    LevelIndicatorComponent
+    LevelIndicatorComponent,
+    PlantdetailComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,22 @@ import {MatMenuModule} from '@angular/material/menu';
     MatCardModule,
     MatGridListModule,
     MatMenuModule, 
-    MatIconModule
+    MatIconModule,
+    // RouterModule.forRoot([
+    //   {
+    //     path: '', 
+    //     component: PlantcardsComponent
+    //   },
+    //   {
+    //     path: 'plant-profile/:plantname', 
+    //     component: PlantdetailComponent
+    //   },
+    //   //TODO: implement 404/not found
+    //   // {
+    //   //   path: '**', 
+    //   //   component: NotFoundComponent
+    //   // },
+    // ]),
   ],
   providers: [
     provideAnimations()

@@ -37,10 +37,12 @@
                           <mat-icon>edit_location_alt</mat-icon>
                           <span>Move To Different Room</span>
                         </button>
-                        <button mat-menu-item>
+                        <a [routerLink]="['plant-profile/',plant.name.replaceAll(' ','_')]">
+                          <button mat-menu-item>
                             <mat-icon>edit</mat-icon>
                             <span>Edit Plant</span>
                           </button>
+                        </a>
                           <button mat-menu-item [style.color]="'red'">
                             <mat-icon>delete_forever</mat-icon>
                             <span>Delete Plant</span>

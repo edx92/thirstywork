@@ -82,5 +82,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     &-wrapped {
       flex-wrap: wrap;
     }
+  }
 }
+
+.mat-mdc-menu-content {
+  a {
+      color:#5b5b5b;
+      text-decoration: none;
+  }
 }

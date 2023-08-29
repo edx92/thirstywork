@@ -16,6 +16,9 @@
 
     // color: #ffffff;
     color:#5b5b5b;
+    a {
+        color:#5b5b5b;
+    }
 
     border-right: mat.get-color-from-palette(styles.$thirsty-work-tertiary,400) solid 2px;
     border-radius: 0px 30px 30px 0px;

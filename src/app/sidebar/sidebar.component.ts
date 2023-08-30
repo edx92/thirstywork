@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faSeedling, faPuzzlePiece, faUserGear,faDroplet } from '@fortawesome/free-solid-svg-icons';
+import { faSeedling, faLocationDot, faUserGear,faDroplet } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,7 +9,7 @@ import { faSeedling, faPuzzlePiece, faUserGear,faDroplet } from '@fortawesome/fr
 export class SidebarComponent {
   icons = {
     faSeedling:faSeedling,
-    faPuzzlePiece:faPuzzlePiece,
+    faLocationDot:faLocationDot,
     faUserGear:faUserGear,
     faDroplet:faDroplet
   }

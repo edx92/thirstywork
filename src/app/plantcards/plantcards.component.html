@@ -1,7 +1,7 @@
 
 <div class="plantCards_container flex flex--row-wrapped" >
 
-        <mat-card  *ngFor="let plant of plants$ | async"class="example-card">
+        <mat-card  *ngFor="let plant of plants$ | async"class="plant-card">
             <mat-card-header>
                 <div mat-card-avatar class="plantcard_avatar-image" style='background-image:url("{{plant.image}}")'></div>
                 <mat-card-title>{{plant.name}}</mat-card-title>
@@ -56,6 +56,23 @@
                 </div>
             </mat-card-actions>
         </mat-card>
+        <mat-card  class="additional-action_card">
+          
+          
+          <mat-card-content>               
+              
+            
+              
+                <span class="add-icon">
+                  <mat-icon>library_add</mat-icon>
+                </span>
+                <span>Add New Plant</span>
+              
+           
+              
+          </mat-card-content>
+          
+      </mat-card>
     
        
 </div>

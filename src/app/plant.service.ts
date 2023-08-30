@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable,Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 //import { map } from 'rxjs/operators';
 
@@ -34,6 +34,8 @@ export interface Plant {
 export class PlantService {
 
   private plants$ = new BehaviorSubject<Plant[]>([]);
+  //private plant$ = new Subject<Plant>;
+  
 
   constructor(private http: HttpClient) { }
 
@@ -47,6 +49,21 @@ export class PlantService {
 
   public getPlants(): Observable<Plant[]>{
     return this.plants$;
+  }
+
+  // ToDo: Implement get single plant api
+  // public initPlant(plantName:string){
+   
+  //   return this.plants$;
+    
+  // }
+
+  // public getPlant(){
+  //   return this.plant$;
+  // }
+
+  public destroy():void {
+    this.plants$.unsubscribe();
   }
 
   // public getPlantsThatNeedWater(): Observable<Plant[]> {

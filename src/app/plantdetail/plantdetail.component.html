@@ -1,3 +1,7 @@
 <div class="plant-detail_container">
-    <div>Plant Detail works, i am {{plantName.replaceAll("_", " ")}}</div>
+    
+    <!-- <div>Water me every: {{plant?.growSeasonWateringSchedule | async}} days</div> -->
+    <div *ngFor="let plant of plants$ | async">
+        <div>Plant Detail works, i am {{plant.name}}</div>
+    </div>
 </div>

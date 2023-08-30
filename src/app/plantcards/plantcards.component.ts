@@ -63,5 +63,9 @@ export class PlantcardsComponent implements OnInit {
     this.plantService.init();
   }
 
+  ngOnDestroy(){
+    if (this.plantService) this.plantService.destroy();
+  }
+
   
 }

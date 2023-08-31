@@ -15,6 +15,8 @@ export class PlantdetailComponent implements OnInit {
   plantSub: Subscription = Subscription.EMPTY;
   public plants$?: Observable<Plant[]>;
 
+  plant: Plant|undefined = undefined;
+
   constructor(private route: ActivatedRoute,private plantService: PlantService){
 
   }
@@ -27,9 +29,22 @@ export class PlantdetailComponent implements OnInit {
     });
    
     // TODO: temporarily just mapping the correct plant => should be subscribing to another endpoint that returns plant by name/id
-    this.plants$ = this.plantService.getPlants().pipe(map(plants => plants.filter(p => p.name == this.plantName.replaceAll("_"," "))));
+    //this.plants$ = this.plantService.getPlants().pipe(map(plants => plants.filter(p => p.name == this.plantName.replaceAll("_"," "))));
 
-    this.plantService.init();
+    this.plantSub = this.plantService.getPlantByName(this.plantName.replaceAll("_"," ")).subscribe(plant => this.plant = plant);
+    
+    //this.plantSub = this.plantService.loadPlantByName(this.plantName);
+    //this.plantService.init();
+    if(!this.plantService.plantsSubActive()){
+      console.log("plants sub not active")
+      this.plantService.init();
+      //this.plantService.initForSinglePlant(this.plantName);
+    }
+    //this.plantService.loadPlantByName(this.plantName);
+    
+    
+    //this.plant = this.plantService.getPlant();
+    
 
 
     
@@ -38,6 +53,7 @@ export class PlantdetailComponent implements OnInit {
 
   ngOnDestroy() {
     if (this.paramSub) this.paramSub.unsubscribe();
-    if (this.plantService) this.plantService.destroy();
+    if (this.plantSub) this.plantSub.unsubscribe();
+    //if (this.plantService) this.plantService.destroy();
   }
 }

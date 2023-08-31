@@ -60,11 +60,14 @@ export class PlantcardsComponent implements OnInit {
   ngOnInit() {
     this.plants$ = this.plantService.getPlants();
 
-    this.plantService.init();
+    if(!this.plantService.plantsSubActive()){
+      console.log("plants sub not active")
+      this.plantService.init();
+    }
   }
 
   ngOnDestroy(){
-    if (this.plantService) this.plantService.destroy();
+    //if (this.plantService) this.plantService.destroy();
   }
 
   

@@ -34,9 +34,7 @@ export interface Plant {
 export class PlantService {
 
   private plants$ = new BehaviorSubject<Plant[]>([]);
-  //private plant$ = new BehaviorSubject<Plant|undefined>(undefined);
-  //private plant: Plant|undefined = undefined;
-  //private plantSub: Subscription = Subscription.EMPTY;
+
   private plantsSub: Subscription = Subscription.EMPTY;
 
   constructor(private http: HttpClient) { }
@@ -48,15 +46,7 @@ export class PlantService {
       this.plants$.next(plants);
     })
   }
-  // public initForSinglePlant(plantName:string): void {
-  //   this.plantsSub = this.http
-  //   .get<Plant[]>('/assets/dummyData/plants.json')
-  //   .subscribe((plants:Plant[])=> {
-  //     this.plants$.next(plants);
-  //     this.loadPlantByName(plantName);
-  //     console.log("init complete")
-  //   })
-  // }
+  
 
   public getPlants(): Observable<Plant[]>{
     return this.plants$;
@@ -69,35 +59,46 @@ export class PlantService {
     )
   }
 
-  // public loadPlantByName(plantName:string){
-  //   this.plantSub = this.getPlants().pipe(
-  //     filter((plants) => plants.length > 0), // dont emit if no plants loaded yet
-  //     map((plants:Plant[]) => plants.find((p) => p.name == plantName.replaceAll("_"," ")))      
-  //   ).subscribe(pl => this.plant = pl)
-
-  //   return this.plantSub;
-  //   //console.log(this.plant)
-  // }
-
-  // public getPlant(){
-  //   console.log("Get Plant")
-  //   return this.plant;
-  // }
+  
 
   public plantsSubActive(){
     console.log("check plants sub")
     return this.plantsSub != Subscription.EMPTY;
   }
 
-  // public plantSubActive(){
-  //   console.log("check plant sub")
-  //   return this.plantSub != Subscription.EMPTY;
-  // }
 
  
 
   public destroy():void {
     this.plants$.unsubscribe();
+  }
+
+
+  public getLastWateredDays(lastWatered:string){
+    // One day Time in ms (milliseconds)
+    const one_day = 1000 * 60 * 60 * 24;
+    let today = new Date();
+
+    let diff = Math.round((Math.round(today.getTime() - new Date(lastWatered).getTime()) / one_day));
+
+    return diff;
+  }
+  
+
+  public calculateWaterLevel(lastWatered:string,wateringSchedule:number){
+    // One day Time in ms (milliseconds)
+    const one_day = 1000 * 60 * 60 * 24;
+
+    let lw = new Date(lastWatered);
+    let today = new Date();
+    //console.log(today)
+    let nw = new Date();
+    // set needs watering to lastwatered plus number of days in watering schedule
+    nw.setDate(lw.getDate() + wateringSchedule);
+
+    let diff = Math.round((Math.round(nw.getTime() - today.getTime()) / one_day));
+
+    return (diff / wateringSchedule) * 100;
   }
 
   // public getPlantsThatNeedWater(): Observable<Plant[]> {

@@ -16,11 +16,11 @@ export class PlantdetailComponent implements OnInit {
     faTrashCan: faTrashCan
   }
 
-  plantName = "";
-  plantSub: Subscription = Subscription.EMPTY;
+  //plantName = "";
+  //plantSub: Subscription = Subscription.EMPTY;
   //public plants$?: Observable<Plant[]>;
 
-  plant: Plant|undefined = undefined;
+  //plant: Plant|undefined = undefined;
 
   
   constructor(
@@ -29,7 +29,7 @@ export class PlantdetailComponent implements OnInit {
   ){ }
 
 
-  public plant$ =this.route.paramMap.pipe(
+  public plant$ = this.route.paramMap.pipe(
     switchMap((params) => 
     this.plantService.getPlantByName((params.get("plantName") ?? "").replaceAll("_"," "))
     )

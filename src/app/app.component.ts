@@ -16,17 +16,17 @@ export class AppComponent implements OnInit{
 
   
 
-  initLoader = () => {
+  initLoader = (miliseconds:number) => {
     setTimeout(()=>{
       this.loading = false;
-    },4000)
+    },miliseconds)
   }
 
   
 
   ngOnInit(){
 
-    this.initLoader();
+    this.initLoader(4000);
 
     
 

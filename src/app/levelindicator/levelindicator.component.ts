@@ -34,7 +34,7 @@ export class LevelIndicatorComponent implements OnInit, OnChanges {
   @Input() waterLevel:number = 10;
 
   constructor(private previousrouteService: PreviousrouteService){
-    
+    //console.log(this.waterLevel)
   }
 
   title = "";
@@ -43,8 +43,9 @@ export class LevelIndicatorComponent implements OnInit, OnChanges {
   };
 
   getFillIndicatorLineValue = (percentage:number) => {
+    //console.log("percentage:" + percentage)
  
-    return  (percentage * (2 * 40 * 3.1415926536)) / 100;
+    return  String((percentage * (2 * 40 * 3.1415926536)) / 100);
   };
 
   filled = false;
@@ -66,6 +67,8 @@ export class LevelIndicatorComponent implements OnInit, OnChanges {
    
     this.prevUrl = this.previousrouteService.getPreviousUrl().value;
     
+    //console.log(this.waterLevel)
+    //console.log(this.percentage)
     
     if(this.prevUrl){
       setTimeout(()=>{
@@ -84,6 +87,7 @@ export class LevelIndicatorComponent implements OnInit, OnChanges {
 
 
   ngOnChanges(changes: SimpleChanges){
+    //console.log(changes["waterLevel"].currentValue)
     this.waterLevel = changes["waterLevel"].currentValue;
     if(this.waterLevel < 25){      
       this.levelColor.good = false;
@@ -96,6 +100,7 @@ export class LevelIndicatorComponent implements OnInit, OnChanges {
       this.levelColor.medium = false;
       this.levelColor.warning = true;
     }
+    //console.log("water level after change " +changes["waterLevel"].currentValue);
     this.percentage = this.getFillIndicatorLineValue(changes["waterLevel"].currentValue) + " 999";
   }
 

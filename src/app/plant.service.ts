@@ -49,6 +49,7 @@ export class PlantService {
   
 
   public getPlants(): Observable<Plant[]>{
+    console.log(this.plants$)
     return this.plants$;
   }
 
@@ -86,17 +87,22 @@ export class PlantService {
   
 
   public calculateWaterLevel(lastWatered:string,wateringSchedule:number){
-    // One day Time in ms (milliseconds)
+
+    
     const one_day = 1000 * 60 * 60 * 24;
 
     let lw = new Date(lastWatered);
+    //console.log(lw)
     let today = new Date();
-    //console.log(today)
-    let nw = new Date();
+    
+    let nw = new Date(lw);
     // set needs watering to lastwatered plus number of days in watering schedule
     nw.setDate(lw.getDate() + wateringSchedule);
+  
 
     let diff = Math.round((Math.round(nw.getTime() - today.getTime()) / one_day));
+
+    //console.log(diff)
 
     return (diff / wateringSchedule) * 100;
   }

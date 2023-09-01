@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {PlantService, Plant} from '../plant.service';
 import { Observable} from 'rxjs';
 import { faDroplet, faTrashCan } from '@fortawesome/free-solid-svg-icons';
@@ -38,6 +38,8 @@ export class PlantcardsComponent implements OnInit {
   ngOnDestroy(){
     //if (this.plantService) this.plantService.destroy();
   }
+
+ 
 
   
 }
